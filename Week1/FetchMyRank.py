@@ -1,20 +1,25 @@
-# m[roll] = marks
-# m[marks] = count
-# m[marks] = rank
+
 import csv
 
 marks = {}
 
+#Read from csv file
 with open('marksheet.csv', 'r') as file:
 	reader = csv.reader(file)
 	for row in reader:
 		marks[ row[0] ] = row[1]
 
+'''
+Basic idea is to create 3 dictionary:
+	- marks [ roll_no. ]
+	- rank  [ marks ]
+	- count [ marks ]
+'''
 count = {}
 rank = {}
 
 r = 1
-l = 100000
+l = 100000		# To avoid error for the first element in dict. marks
 for m in sorted(marks.items(), key=lambda item:item[1] , reverse=True):
 	rank[m[1]] = r
 
