@@ -7,8 +7,7 @@ class Graph():
 	# [[0]*n]*n  returns same reference to all the lists
 	def __init__(self, vertices):
 		self.V = vertices
-		self.graph =[[0 for column in range(vertices)]  
-                    for row in range(vertices)] 
+		self.graph =[[0 for column in range(vertices)]for row in range(vertices)] 
 
     # Return which index to select for next iteration
 	def minDistance(self, dist, sptSet):
